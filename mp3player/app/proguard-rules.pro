@@ -1,5 +1,3 @@
 # Add project specific ProGuard rules here.
--keepattributes *Annotation*
--keepclassmembers class * {
-    @android.webkit.JavascriptInterface <methods>;
-}
+-keep class com.mp3player.** { *; }
+-keepclassmembers class com.mp3player.** { *; }

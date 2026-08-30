@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Custom colors for MP3 Player -->
+    <color name="bg_dark">#1a1a2e</color>
+    <color name="bg_card">#16213e</color>
+    <color name="accent">#e94560</color>
+    <color name="primary">#0f3460</color>
 </resources>

@@ -1,49 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="#1a1a2e"
+    tools:context=".MainActivity">
 
+    <!-- Status Bar -->
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#16213e"
+        android:padding="12dp"
+        android:text="Initializing..."
+        android:textColor="#0f3460"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Current Song Display -->
     <TextView
         android:id="@+id/txtCurrentSong"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#16213e"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:padding="16dp"
+        android:singleLine="true"
         android:text="No song playing"
+        android:textColor="#e94560"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:gravity="center"
-        android:paddingBottom="16dp"/>
+        app:layout_constraintTop_toBottomOf="@id/txtStatus"/>
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"/>
-
+    <!-- Control Buttons -->
     <LinearLayout
+        android:id="@+id/controlButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#16213e"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:paddingTop="16dp">
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txtCurrentSong">
 
         <Button
-            android:id="@+id/btnPlayPause"
+            android:id="@+id/btnScan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:text="Play"
-            android:layout_marginEnd="8dp"/>
+            android:backgroundTint="#0f3460"
+            android:text="Scan"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#0f3460"
+            android:text="Search"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+
+    <!-- Playback Controls -->
+    <LinearLayout
+        android:id="@+id/playbackControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#16213e"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/controlButtons">
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#e94560"
+            android:text="▶ Play"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/btnPause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="#0f3460"
+            android:text="⏸ Pause"
+            android:textColor="#ffffff"/>
 
         <Button
             android:id="@+id/btnStop"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:text="Stop"/>
-
+            android:backgroundTint="#0f3460"
+            android:text="⏹ Stop"
+            android:textColor="#ffffff"/>
     </LinearLayout>
 
-</LinearLayout>
+    <!-- Song List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#1a1a2e"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playbackControls"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
