@@ -1,8 +1,80 @@
 ```
-mp3/
-```node_modules/
-.next/
-dist/
+# Android
+*.apk
+*.ap_
+*.aab
+*.dex
+
+# Gradle
+.gradle/
 build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio
+.idea/
+*.iml
+*.iws
+*.db-shm
+*.db-wal
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log Files
 *.log
+
+# Built application files
+*/build/
+
+# Unit test results
+*/test-results/
+*/jacoco/
+
+# Code coverage reports
+*/coverage/
+
+# Version control
+.svn/
+
+# Debug
+debug.keystore
+.debug/
+
+# Release
+release.keystore
+.release/
+
+# Generated files
+gen/
+out/
+
+# Proguard generated files
+proguard/
+
+# Android cache
+.cache/
+
+# Thumbnails
+Thumbs.db
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*.tmp
+
+# Dependencies
 node_modules/
+venv/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+target/
+```
